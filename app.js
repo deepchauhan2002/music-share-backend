@@ -29,7 +29,7 @@ app.get('/playlists/:userId',checkAuth, playlistsController.getPlaylistById)
 app.post('/playlists', playlistsController.createPlaylist)
 app.put('/playlists/:userId',playlistsController.updatePlaylist)
 
-const port = 4000;
+const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
